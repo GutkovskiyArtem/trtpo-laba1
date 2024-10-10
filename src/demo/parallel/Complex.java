@@ -93,4 +93,9 @@ public class Complex {
     public double lengthSQ() {
         return re * re + im * im;
     }
+    public Complex divide(Complex other) {
+        double denom = other.re * other.re + other.im * other.im;
+        return new Complex((this.re * other.re + this.im * other.im) / denom,
+                (this.im * other.re - this.re * other.im) / denom);
+    }
 }
